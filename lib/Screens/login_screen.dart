@@ -16,12 +16,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String _email = '';
+  String _username = '';
   String _password = '';
 
   loginPressed() async {
-    if (_email.isNotEmpty && _password.isNotEmpty) {
-      http.Response response = await AuthServices.login(_email, _password);
+    if (_username.isNotEmpty && _password.isNotEmpty) {
+      http.Response response = await AuthServices.login(_username, _password);
       Map responseMap = jsonDecode(response.body);
       if (response.statusCode == 200) {
         Navigator.push(
@@ -61,10 +61,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextField(
                 decoration: const InputDecoration(
-                  hintText: 'Enter your email',
+                  hintText: 'Enter your username',
                 ),
                 onChanged: (value) {
-                  _email = value;
+                  _username = value;
                 },
               ),
               const SizedBox(

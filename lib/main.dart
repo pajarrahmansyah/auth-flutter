@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Screens/register_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() {
+  dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
