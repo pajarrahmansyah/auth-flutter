@@ -5,14 +5,14 @@ import 'package:http/http.dart' as http;
 
 class AuthServices {
   static Future<http.Response> register(
-      String name, String email, String password) async {
+      String username, String email, String password) async {
     Map data = {
-      "name": name,
+      "username": username,
       "email": email,
       "password": password,
     };
     var body = json.encode(data);
-    var url = Uri.parse(baseURL + 'auth/register');
+    var url = Uri.parse(baseURL + 'auth/signup');
     http.Response response = await http.post(
       url,
       headers: headers,
@@ -22,13 +22,13 @@ class AuthServices {
     return response;
   }
 
-  static Future<http.Response> login(String email, String password) async {
+  static Future<http.Response> login(String username, String password) async {
     Map data = {
-      "email": email,
+      "username": username,
       "password": password,
     };
     var body = json.encode(data);
-    var url = Uri.parse(baseURL + 'auth/login');
+    var url = Uri.parse(baseURL + 'auth/signin');
     http.Response response = await http.post(
       url,
       headers: headers,

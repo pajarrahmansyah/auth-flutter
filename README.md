@@ -1,4 +1,4 @@
-# flutterapp
+# auth-flutter
 
 A new Flutter application.
 
@@ -14,3 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Note
+Before running dev app, make your own environtment variable with `cp .env.example .env` then, set the **API_URL** with your own rest api authentication, look at [https://github.com/pajarrahmansyah/auth-node-js-api](https://github.com/pajarrahmansyah/auth-node-js-api)
